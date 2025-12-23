@@ -1,0 +1,259 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --off-white: #f8f8f8;
+  --silver: #989898;
+  --dark-blue: #041f32;
+  --dark-orange: #e86c00;
+  --yellow: #f3d600;
+  --dark-cyan: #0e445c;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  padding: 2.8rem 0;
+  background-color: var(--off-white);
+}
+img {
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 110rem;
+  padding: 0 2rem;
+  margin: auto;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5.5rem;
+}
+
+.navigation-logo {
+  width: 6.4rem;
+}
+
+.nav-list {
+  /* display: flex; */
+  display: none;
+  align-items: center;
+  gap: 4rem;
+}
+
+.nav-link {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+  text-decoration: none;
+  color: var(--dark-cyan);
+}
+
+.nav-link:hover {
+  color: var(--dark-orange);
+}
+
+.navigation-menu-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 0;
+  cursor: pointer;
+  width: 4rem;
+  border: none;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 68rem;
+  height: 100%;
+  object-fit: cover;
+  grid-column: 1 / -1;
+}
+
+.hero-article {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30rem 1fr;
+  gap: 2.8rem;
+}
+
+.hero-heading {
+  color: var(--dark-blue);
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+  color: var(--dark-cyan);
+  opacity: 0.86;
+  margin-bottom: 2.9rem;
+}
+
+.hero-text a {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  text-decoration: none;
+  letter-spacing: 0.4rem;
+  background-color: var(--dark-orange);
+  color: var(--dark-blue);
+  padding: 1.2rem 3.2rem;
+}
+
+.hero-text a:hover {
+  background-color: black;
+  color: white;
+  transition: 250ms;
+}
+
+.sidebar {
+  background-color: var(--dark-blue);
+  padding: 3.2rem 2.4rem;
+}
+
+.sidebar-list a {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--off-white);
+  text-decoration: none;
+}
+
+.sidebar-list a:hover {
+  color: var(--dark-orange);
+  transition: 150ms;
+}
+.sidebar-title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--dark-orange);
+  margin-bottom: 3.4rem;
+}
+
+.sidebar-item:not(:last-child)::after {
+  content: "____________________________________________________________________";
+  display: inline-block;
+  color: rgb(192, 192, 192);
+  opacity: 0.3;
+  margin: 3rem 0;
+}
+
+.sidebar-article p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+  color: var(--silver);
+  opacity: 0.72;
+  margin-top: 1rem;
+}
+
+.news-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 5rem;
+}
+.news-bar article {
+  display: flex;
+  gap: 2.4rem;
+}
+.news-bar article img {
+  width: 10rem;
+  height: 12.7rem;
+  object-fit: cover;
+  flex-basis: 10rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.news-bar article div {
+  display: flex;
+  flex-direction: column;
+}
+.news-bar article div span {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--dark-orange);
+  margin-bottom: 1.2rem;
+}
+.news-bar article div a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  font-weight: 800;
+  color: var(--dark-blue);
+  margin-bottom: 0.8rem;
+}
+.news-bar article div p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+  color: var(--silver);
+  opacity: 0.72;
+}
+
+@media only screen and (min-width: 769px) {
+  body {
+    padding: 4rem 0;
+  }
+  .nav-list {
+    display: flex;
+  }
+  .navigation-menu-btn {
+    display: none;
+  }
+  .hero-article {
+    grid-template-columns: 1fr 1fr;
+  }
+  .news-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  body {
+    padding: 8rem 0;
+  }
+  .main {
+    grid-template-columns: 2fr 1fr;
+  }
+  .news-bar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .navigation-menu-btn {
+    display: none;
+  }
+}
